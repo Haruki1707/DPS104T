@@ -1,20 +1,57 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {FlatList, Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import Tts from 'react-native-tts';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default function App(utterance) {
+    const DATA = [{
+        name: 'Barcelona', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png'
+    }, {
+        name: 'Real Madrid', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png'
+    }, {
+        name: 'Atletico del madrid', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/1200px-Atletico_Madrid_2017_logo.svg.png'
+    }];
+
+    const logear = (title) => {
+        console.log(title);
+        Tts.speak(title);
+    }
+
+    const Item = ({ title, img }) => (
+        <View style={styles.item} onPointerDown={() => logear(title)}>
+            <Text style={styles.title}>{title}</Text>
+            <Image source={img} style={styles.img}/>
+        </View>
+    );
+
+    const renderItem = ({ item }) => (
+        <Item title={item.name} img={item.img}/>
+    );
+
+    return (
+        <SafeAreaView style={styles.container}>
+            <FlatList data={DATA} renderItem={renderItem}/>
+        </SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1, backgroundColor: '#ccc', alignItems: 'center', justifyContent: 'center', padding: 16
+    },
+    item: {
+        backgroundColor: '#f9c2ff',
+        padding: 20,
+        marginVertical: 8,
+        marginHorizontal: 16,
+    },
+    title: {
+        fontSize: 32,
+    },
+    img: {
+        width: 200,
+        height: 125,
+        borderWidth: 2,
+        borderColor: '#d35647',
+        resizeMode: 'contain',
+        margin: 8
+    }
 });
