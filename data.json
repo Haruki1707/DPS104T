@@ -10,5 +10,9 @@
   {
     "name": "Atletico del madrid",
     "img": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/1200px-Atletico_Madrid_2017_logo.svg.png"
+  },
+  {
+    "name": "Borussia Dortmund",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/7/74/Borussia_Dortmund.png"
   }
 ]
