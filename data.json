@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Barcelona",
+    "img": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png"
+  },
+  {
+    "name": "Real Madrid",
+    "img": "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png"
+  },
+  {
+    "name": "Atletico del madrid",
+    "img": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/1200px-Atletico_Madrid_2017_logo.svg.png"
+  }
+]
